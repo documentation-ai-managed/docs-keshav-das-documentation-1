@@ -1,0 +1,98 @@
+---
+title: Chatbots
+description: Comprehensive guide to building and deploying custom chatbots with Vaibrix AI technology
+---
+
+## Building Intelligent Chatbots
+
+Vaibrix's chatbot solutions transform customer interactions through conversational AI that understands context and provides personalized responses. Our platform enables businesses to create chatbots for websites, mobile apps, and messaging platforms.
+
+<Columns cols={2}>
+  <Card title="Natural Language Processing" icon="brain" href="#nlp">
+    Advanced NLP capabilities for understanding user intent and context.
+  </Card>
+  <Card title="Multi-Platform Support" icon="smartphone" href="#platforms">
+    Deploy chatbots across web, mobile, and messaging applications.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Web Integration" icon="globe">
+    Embed chatbots directly into your website using our JavaScript SDK. The integration process involves adding a simple script tag and configuring the chatbot appearance.
+
+    <Steps>
+      <Step title="Install SDK" icon="download">
+        Include the Vaibrix chatbot script in your website's HTML head section.
+      </Step>
+      <Step title="Initialize" icon="settings">
+        Configure your chatbot with API keys and customization options.
+      </Step>
+      <Step title="Customize" icon="palette">
+        Adjust colors, positioning, and behavior to match your brand.
+      </Step>
+      <Step title="Test" icon="check-circle">
+        Verify the chatbot works correctly across different devices and browsers.
+      </Step>
+    </Steps>
+
+    <Callout kind="info">For React applications, use our dedicated npm package for seamless integration.</Callout>
+  </Tab>
+  <Tab title="API Configuration" icon="code">
+    Configure your chatbot through our REST API to programmatically manage conversations, training data, and response logic.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+const response = await fetch('/api/chatbots/config', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    name: 'Support Bot',
+    language: 'en',
+    personality: 'helpful'
+  })
+});
+const config = await response.json();
+```
+      ```python
+import requests
+
+config_data = {
+    "name": "Support Bot",
+    "language": "en",
+    "personality": "helpful"
+}
+response = requests.post('/api/chatbots/config', json=config_data)
+config = response.json()
+```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Training Your Chatbot" default-open="true">
+    Effective chatbot training requires diverse datasets and iterative refinement. Start with common customer queries and gradually expand your training corpus.
+
+    | Training Phase | Duration | Key Activities |
+    |----------------|----------|----------------|
+    | Initial Setup | 1-2 days | Define intents and entities |
+    | Data Collection | 3-5 days | Gather conversation examples |
+    | Model Training | 1 day | Train AI model on datasets |
+    | Testing | 2-3 days | Validate responses and accuracy |
+  </Expandable>
+  <Expandable title="Performance Monitoring" default-open="false">
+    Track chatbot performance metrics including response accuracy, conversation completion rates, and user satisfaction scores. Use these insights to continuously improve your chatbot's effectiveness.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">Regularly update your chatbot's knowledge base to keep responses current and relevant.</Callout>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  If your chatbot isn't responding correctly, check the following common issues:
+
+  - **API Key Configuration**: Ensure your API key is valid and has the correct permissions.
+  - **Training Data Quality**: Poor training data can lead to inaccurate responses. Review and clean your datasets.
+  - **Rate Limiting**: Check if you're exceeding API rate limits during high traffic periods.
+  - **Network Connectivity**: Verify stable internet connection for real-time responses.
+
+  For persistent issues, contact our support team with detailed logs and error messages.
+</Expandable>

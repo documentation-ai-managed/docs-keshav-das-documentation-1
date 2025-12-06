@@ -1,0 +1,97 @@
+---
+title: Voice Agents
+description: Guide to implementing voice-powered AI agents for automated audio interactions and voice commands
+---
+
+## Voice Agent Solutions
+
+Vaibrix voice agents enable businesses to provide hands-free customer experiences through advanced speech recognition and natural language processing. These agents can handle phone calls, voice commands, and audio-based interactions across various platforms.
+
+<Columns cols={2}>
+  <Card title="Speech Recognition" icon="mic" href="#speech-recog">
+    Accurate voice-to-text conversion with support for multiple languages.
+  </Card>
+  <Card title="Text-to-Speech" icon="volume-2" href="#tts">
+    Natural-sounding voice synthesis for clear audio responses.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Phone Integration" icon="phone">
+    Integrate voice agents with your existing phone systems to automate customer service calls and provide 24/7 support.
+
+    <Steps>
+      <Step title="Set Up SIP Trunk" icon="settings">
+        Configure your SIP trunk connection for voice agent routing.
+      </Step>
+      <Step title="Define Call Flows" icon="git-branch">
+        Map out conversation paths and decision trees for different scenarios.
+      </Step>
+      <Step title="Test Audio Quality" icon="headphones">
+        Verify clear audio transmission and natural voice synthesis.
+      </Step>
+      <Step title="Go Live" icon="play-circle">
+        Deploy the voice agent and monitor initial interactions.
+      </Step>
+    </Steps>
+
+    <Callout kind="info">Voice agents can handle up to 100 concurrent calls depending on your plan.</Callout>
+  </Tab>
+  <Tab title="Voice Commands" icon="command">
+    Enable voice-controlled actions in your applications and devices for enhanced user experience.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+const voiceAgent = new VaibrixVoiceAgent({
+  apiKey: 'your_api_key',
+  language: 'en-US',
+  wakeWord: 'Hey Assistant'
+});
+
+voiceAgent.onCommand('turn on lights', () => {
+  // Execute light control logic
+  console.log('Lights activated');
+});
+
+voiceAgent.startListening();
+```
+      ```python
+from vaibrix_voice import VoiceAgent
+
+agent = VoiceAgent(
+    api_key='your_api_key',
+    language='en-US',
+    wake_word='Hey Assistant'
+)
+
+@agent.command('turn on lights')
+def activate_lights():
+    print('Lights activated')
+
+agent.start_listening()
+```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Audio Quality Optimization" default-open="true">
+    Optimize your voice agent's audio performance by considering background noise, accent variations, and speech clarity. Use noise cancellation algorithms and adaptive audio processing.
+  </Expandable>
+  <Expandable title="Language Support" default-open="false">
+    Our voice agents support multiple languages and dialects. Configure language settings based on your target audience and geographic location.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">Test voice agents in various acoustic environments to ensure reliable performance.</Callout>
+
+<Expandable title="Handling Complex Conversations" default-open="false">
+  For complex customer inquiries that require human intervention, voice agents can seamlessly transfer calls to live agents. Configure escalation rules based on conversation context and user sentiment.
+
+  | Escalation Trigger | Response Action |
+  |-------------------|-----------------|
+  | High frustration detected | Immediate transfer |
+  | Technical issue identified | Route to specialist |
+  | Payment-related query | Transfer to billing |
+  | Unclear intent | Clarify and retry |
+</Expandable>

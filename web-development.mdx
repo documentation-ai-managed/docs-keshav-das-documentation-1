@@ -1,0 +1,102 @@
+---
+title: Web Development
+description: Complete guide to custom web application development services offered by Vaibrix
+---
+
+## Custom Web Development
+
+Vaibrix provides comprehensive web development services to create modern, responsive, and scalable web applications. Our team specializes in building custom solutions that integrate seamlessly with your existing systems and enhance your digital presence.
+
+<Columns cols={2}>
+  <Card title="Responsive Design" icon="monitor" href="#responsive">
+    Mobile-first designs that work perfectly across all devices and screen sizes.
+  </Card>
+  <Card title="API Integration" icon="link" href="#api-integration">
+    Connect your web applications with external services and databases.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Frontend Development" icon="layout">
+    Build engaging user interfaces with modern frameworks and best practices.
+
+    <Steps>
+      <Step title="Planning" icon="target">
+        Define user requirements and create wireframes for the application.
+      </Step>
+      <Step title="Design" icon="palette">
+        Create visual designs and user experience flows.
+      </Step>
+      <Step title="Development" icon="code">
+        Implement the frontend using React, Vue, or Angular frameworks.
+      </Step>
+      <Step title="Testing" icon="check-circle">
+        Conduct thorough testing across different browsers and devices.
+      </Step>
+    </Steps>
+
+    <Callout kind="info">We use component-based architecture for maintainable and scalable code.</Callout>
+  </Tab>
+  <Tab title="Backend Integration" icon="server">
+    Develop robust backend systems to power your web applications.
+
+    <CodeGroup tabs="Node.js,Python">
+      ```javascript
+const express = require('express');
+const app = express();
+
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await User.findAll();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+```
+      ```python
+from flask import Flask, jsonify
+from models import User
+
+app = Flask(__name__)
+
+@app.route('/api/users')
+def get_users():
+    try:
+        users = User.query.all()
+        return jsonify([user.to_dict() for user in User])
+    except Exception as e:
+        return jsonify({'error': 'Internal server error'}), 500
+
+if __name__ == '__main__':
+    app.run(port=3000)
+```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Database Design" default-open="true">
+    Design efficient database schemas that support your application's data requirements. We work with SQL and NoSQL databases to optimize performance and scalability.
+  </Expandable>
+  <Expandable title="Security Implementation" default-open="false">
+    Implement robust security measures including authentication, authorization, and data encryption to protect your applications and user data.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">Regular security audits and updates are essential for maintaining application integrity.</Callout>
+
+<Expandable title="Deployment and Maintenance" default-open="false">
+  Deploy your web applications to cloud platforms with automated CI/CD pipelines. We provide ongoing maintenance and support to ensure optimal performance.
+
+  | Deployment Stage | Key Activities |
+  |------------------|----------------|
+  | Staging | Test in production-like environment |
+  | Production | Deploy to live servers with monitoring |
+  | Monitoring | Track performance and error logs |
+  | Updates | Apply security patches and feature enhancements |
+</Expandable>
